@@ -4,7 +4,7 @@ import { Recipe } from '../recipe.model';
 @Component({
   selector: 'app-recipe-detail',
   templateUrl: './recipe-detail.component.html',
-  styleUrl: './recipe-detail.component.less'
+  styleUrl: './recipe-detail.component.less',
 })
 export class RecipeDetailComponent {
   @Input() recipe: Recipe;
