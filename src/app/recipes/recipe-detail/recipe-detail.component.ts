@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Recipe } from '../recipe.model';
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -7,5 +8,14 @@ import { Recipe } from '../recipe.model';
   styleUrl: './recipe-detail.component.less',
 })
 export class RecipeDetailComponent {
+  private recipeService?: RecipeService;
   @Input() recipe: Recipe;
+
+  constructor() {
+    this.recipeService = inject(RecipeService);
+  }
+
+  onAddToShoppingList() {
+    this.recipeService.addIngredientsToShoppingList(this.recipe.ingredients);
+  }
 }
