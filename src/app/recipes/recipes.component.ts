@@ -6,10 +6,9 @@ import { RecipeService } from './recipe.service';
   selector: 'app-recipes',
   templateUrl: './recipes.component.html',
   styleUrl: './recipes.component.less',
-  providers: [RecipeService]
 })
 export class RecipesComponent implements OnInit {
-  recipeService?: RecipeService;
+  private recipeService?: RecipeService;
   selectedRecipe: Recipe;
 
   constructor() {
