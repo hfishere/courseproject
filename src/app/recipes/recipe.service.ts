@@ -11,6 +11,7 @@ export class RecipeService {
 
     private recipes: Recipe[] = [
         new Recipe(
+          1,
           'Sayur Asem', 
           'This is simply a test 1', 
           'https://harianresep.com/wp-content/uploads/2020/06/resep-sayur-asem.jpg',
@@ -20,15 +21,17 @@ export class RecipeService {
             new Ingredient('Asam Jawa', 1),
           ]),
         new Recipe(
+          2,
           'Ayam Bakar', 
           'This is simply a test 1', 
-          'https://harianresep.com/wp-content/uploads/2020/06/resep-sayur-asem.jpg',
+          'https://img.qraved.co/v2/image/data/2015/11/05/ayam_bakar-740x493-x.jpg',
           [
             new Ingredient('Ayam', 1),
             new Ingredient('Kecap', 1),
             new Ingredient('Saos Lada Hitam', 2),
           ]),
         new Recipe(
+          3,
           'Lalapan', 
           'This is simply a test 1', 
           'https://cms.sehatq.com/public/img/article_img/13-sayur-lalapan-khas-indonesia-yang-nikmat-disantap-matang-ataupun-mentah-1623719683.jpg',
@@ -45,6 +48,10 @@ export class RecipeService {
 
       getRecipes() {
         return this.recipes.slice();
+      }
+
+      getRecipe(index: number) {
+        return this.recipes[index];
       }
 
       addIngredientsToShoppingList(ingredients: Ingredient[]) {

@@ -15,12 +15,9 @@ import { RecipeService } from '../../recipe.service';
 export class RecipeItemComponent {
   recipeService?: RecipeService;
   @Input() recipe: Recipe;
+  @Input() index: number;
 
   constructor() {
     this.recipeService = inject(RecipeService);
-  }
-
-  onSelected() {
-    this.recipeService.recipeSelected.emit(this.recipe);
   }
 }

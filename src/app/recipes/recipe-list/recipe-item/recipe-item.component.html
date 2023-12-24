@@ -1,6 +1,7 @@
 <a 
+    [routerLink]="[index]"
+    routerLinkActive="active"
     class="list-group-item clearfix"
-    (click)="onSelected()"
     style="cursor: pointer;">
     <div class="pull-left">
         <h4 class="list-group-item-heading">{{ recipe.name }}</h4>
@@ -9,4 +10,4 @@
     <span class="pull-right">
         <img [src]="recipe.imagePath" class="img-responsive" alt="{{ recipe.name }}" style="max-height: 50px;">
     </span>
-</a>  
+</a>
