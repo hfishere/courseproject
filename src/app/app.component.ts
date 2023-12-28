@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { 
+          Component, 
+          OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -11,9 +13,5 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.featureSelected = 'recipe';
-  }
-
-  onNavigate(feature: string) {
-    this.featureSelected = feature;    
   }
 }
