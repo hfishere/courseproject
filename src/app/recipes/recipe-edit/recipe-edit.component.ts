@@ -54,39 +54,53 @@ export class RecipeEditComponent implements OnInit {
 
   onAddIngredient() {
     const ingFormArray = (this.recipeForm.get('ingredients') as FormArray);
-    // Below method can prevent add new row if last FormArray was not valid, it might be useful for someone needs out there
-    if (this.editMode) {      
-      const lastIndex = ingFormArray.length - 1;
-  
-      if (ingFormArray.at(lastIndex).valid) {
-        ingFormArray.push(
-          this.formBuilder.group({
-            name: [null, Validators.required],
-            amount: [
-              null,
-              [
-                Validators.required, ,
-                Validators.pattern(/^[1-9]+[0-9]*$/)
-              ]
-            ]
-          })
-        );
-      }    
-      // Should return error or something
-    } else {
-      ingFormArray.push(
-        this.formBuilder.group({
-          name: [null, Validators.required],
-          amount: [
-            null,
-            [
-              Validators.required, ,
-              Validators.pattern(/^[1-9]+[0-9]*$/)
-            ]
+
+    ingFormArray.push(
+      this.formBuilder.group({
+        name: [null, Validators.required],
+        amount: [
+          null,
+          [
+            Validators.required, ,
+            Validators.pattern(/^[1-9]+[0-9]*$/)
           ]
-        })
-      );
-    }  
+        ]
+      })
+    );
+
+    // Below method can prevent add new row if last FormArray was not valid, it might be useful for someone needs out there
+    // if (this.editMode) {      
+    //   const lastIndex = ingFormArray.length - 1;
+  
+    //   if (ingFormArray.at(lastIndex).valid) {
+    //     ingFormArray.push(
+    //       this.formBuilder.group({
+    //         name: [null, Validators.required],
+    //         amount: [
+    //           null,
+    //           [
+    //             Validators.required, ,
+    //             Validators.pattern(/^[1-9]+[0-9]*$/)
+    //           ]
+    //         ]
+    //       })
+    //     );
+    //   }    
+    //   // Should return error or something
+    // } else {
+    //   ingFormArray.push(
+    //     this.formBuilder.group({
+    //       name: [null, Validators.required],
+    //       amount: [
+    //         null,
+    //         [
+    //           Validators.required, ,
+    //           Validators.pattern(/^[1-9]+[0-9]*$/)
+    //         ]
+    //       ]
+    //     })
+    //   );
+    // }  
   }
 
   onDeleteIngredient(index: number) {
