@@ -14,6 +14,7 @@ export class AuthComponent {
   isLoginMode: boolean = true;
   isLoading: boolean = false;
   error: string = null;
+  successLoginMessage: string = null;
 
   constructor() {
     this.authService = inject(AuthService);
@@ -44,6 +45,8 @@ export class AuthComponent {
     authObs.subscribe(
       response => {
         console.log(response);
+        this.error = null;
+        this.successLoginMessage = 'Congrats';
         this.isLoading = false;
       },
       errorMessage => {
