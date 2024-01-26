@@ -6,7 +6,7 @@
     <div class="alert alert-success" *ngIf="successLoginMessage">
       <p>{{ successLoginMessage }}</p>
     </div>
-    <div style="text-align: center;">
+    <div style="text-align: center">
       <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
     </div>
     <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)" *ngIf="!isLoading">
@@ -35,7 +35,11 @@
         />
       </div>
       <div>
-        <button type="submit" class="btn btn-primary" [disabled]="!authForm.valid">
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!authForm.valid"
+        >
           {{ isLoginMode ? "Login" : "Sign Up" }}
         </button>
         |
